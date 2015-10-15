@@ -20,6 +20,7 @@
 
 </head>
 <body>
+    <div id="pjax-container">
 
     @if (auth()->user())
         @include('back.layout._partials.menu')
@@ -37,6 +38,7 @@
     @if (auth()->user())
         @include('back.layout._partials.footer')
     @endif
+    </div>
 
 {{-- Scripts --}}
 <script src="{{ elixir('js/back.app.js') }}" ></script>
