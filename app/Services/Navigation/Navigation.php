@@ -61,12 +61,12 @@ class Navigation
     public function getBackMainMenu()
     {
         $menu = Menu::handler('backMain');
-        $menu->add(action('Back\ArticleController@index', [], false), trans('back-articles.title'));
-        $menu->add(action('Back\NewsItemController@index', [], false), trans('back-newsItems.title'));
-        $menu->add(action('Back\PersonController@index', [], false), trans('back-people.title'));
-        $menu->add(action('Back\FormResponseController@showDownloadButton', [], false), trans('back-formResponses.title'));
-        $menu->add(action('Back\FragmentController@index', [], false), trans('back-fragments.title'));
-        $menu->add(action('Back\TagController@index', [], false), trans('back-tags.title'));
+        $menu->add(action('Back\ArticleController@index', [], false), trans('back-articles.title'), null, ['data-pjax']);
+        $menu->add(action('Back\NewsItemController@index', [], false), trans('back-newsItems.title'), null, ['data-pjax']);
+        $menu->add(action('Back\PersonController@index', [], false), trans('back-people.title'), null, ['data-pjax']);
+        $menu->add(action('Back\FormResponseController@showDownloadButton', [], false), trans('back-formResponses.title'), null, ['data-pjax']);
+        $menu->add(action('Back\FragmentController@index', [], false), trans('back-fragments.title'), null, ['data-pjax']);
+        $menu->add(action('Back\TagController@index', [], false), trans('back-tags.title'), null, ['data-pjax']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));
@@ -79,9 +79,9 @@ class Navigation
     {
         $menu = Menu::handler('backService');
 
-        $menu->add(action('Back\UserController@redirectToDefaultIndex', [], false), trans('back-users.title'));
-        $menu->add(action('Back\ActivitylogController@index', [], false), 'Log');
-        $menu->add(action('Back\StatisticsController@index', [], false), trans('back-statistics.menuTitle'));
+        $menu->add(action('Back\UserController@redirectToDefaultIndex', [], false), trans('back-users.title'), null, ['data-pjax']);
+        $menu->add(action('Back\ActivitylogController@index', [], false), 'Log', null, ['data-pjax']);
+        $menu->add(action('Back\StatisticsController@index', [], false), trans('back-statistics.menuTitle'), null, ['data-pjax']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));

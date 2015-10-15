@@ -42,3 +42,9 @@ require("blender.js/modules/form.locationpicker");
 
 require("blender.js/modules/table.datatables");
 require("blender.js/modules/table.sortable");
+
+require('../vendor/jquery.pjax.js')
+$(document).ready(function() {
+    $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container', {timeout: 2000})
+});
+
