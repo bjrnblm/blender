@@ -70,7 +70,7 @@ class TagFactory extends Factory
         }
 
         foreach ($translations as $locale => $translation) {
-            $model->translate($locale)->name = $translation ?: "$defaultTranslation $locale";
+            $model->translatefoobar($locale)->name = $translation ?: "$defaultTranslation $locale";
         }
     }
 }

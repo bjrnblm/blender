@@ -18,8 +18,8 @@ class ArticleSeeder extends DatabaseSeeder
         $article = new Article();
 
         foreach (config('app.locales') as $locale) {
-            $article->translate($locale)->name = $name;
-            $article->translate($locale)->text =
+            $article->translatefoobar($locale)->name = $name;
+            $article->translatefoobar($locale)->text =
                 '<p class="intro">'.$this->faker->paragraph(6).'</p>'.
                 '<h3>'.$this->faker->sentence(6).'</h3>'.
                 '<p>'.$this->faker->paragraph(9).'</p>'.

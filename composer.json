@@ -16,7 +16,6 @@
     "cviebrock/eloquent-sluggable": "^3.0",
     "davejamesmiller/laravel-breadcrumbs": "^3.0",
     "devitek/yaml-translation": "^1.0",
-    "dimsav/laravel-translatable": "^5.0",
     "doctrine/dbal": "^2.5",
     "fedeisas/laravel-mail-css-inliner": "dev-master#430ebd087347812f75a2476bcedc26ced2f4753f",
     "filp/whoops": "^1.0",
@@ -53,7 +52,8 @@
     "spatie/laravel-tail": "^1.0",
     "spatie/seeders": "^3.0",
     "spatie/string": "^2.0",
-    "vespakoen/menu": "^3.0"
+    "vespakoen/menu": "^3.0",
+    "vinkla/translator": "^3.1"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",

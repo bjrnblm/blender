@@ -7,12 +7,14 @@ use App\Models\Foundation\Traits\HasOnlineToggle;
 use App\Models\Foundation\Traits\HasTags;
 use App\Models\Foundation\Traits\Presentable;
 use App\Models\Foundation\Traits\HasMedia as HasMediaTrait;
+use App\Models\Foundation\Traits\Translatable;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\MediaLibrary\MediaRepository;
 
-abstract class ModuleModel extends TranslatableEloquent implements HasMediaConversions
+abstract class ModuleModel extends Model implements HasMediaConversions
 {
-    use Draftable, Presentable, HasMediaTrait;
+    use Draftable, HasMediaTrait, Presentable, Translatable;
 
     /**
      * @var array
@@ -64,7 +66,7 @@ abstract class ModuleModel extends TranslatableEloquent implements HasMediaConve
                 }
 
                 $value = $attributes[$translatedFieldName];
-                $this->translate($locale)->$fieldName = $value;
+                $this->translatefoobar($locale)->$fieldName = $value;
             }
         }
     }

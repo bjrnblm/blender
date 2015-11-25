@@ -42,7 +42,7 @@ class Tag extends ModuleModel implements SortableInterface
         $tag->online = true;
 
         foreach (config('app.locales') as $locale) {
-            $tag->translateOrNew($locale)->name = $name;
+            $tag->translatefoobar($locale)->name = $name;
         }
 
         $tag->save();

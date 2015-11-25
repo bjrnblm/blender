@@ -2,7 +2,6 @@
 
 namespace App\Test\Integration\Back;
 
-use App\Models\Tag;
 use TagSeeder;
 
 class TagTest extends ModuleTestCase
@@ -15,6 +14,20 @@ class TagTest extends ModuleTestCase
         'name',
         'url',
     ];
+
+    /**
+     * @test
+     */
+    public function models_have_their_expected_properties()
+    {
+        $this->assertCount(10, $this->models);
+
+        foreach($this->models as $model) {
+            foreach($this->expectedProperties as $expectedProperty) {
+                $this->assertNotNull($model->$expectedProperty, "Property {$expectedProperty} was null");
+            }
+        }
+    }
 
     public function setUp()
     {

@@ -185,7 +185,6 @@ return [
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Devitek\Core\Translation\TranslationServiceProvider::class,
-        Dimsav\Translatable\TranslatableServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Menu\MenuServiceProvider::class,
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,

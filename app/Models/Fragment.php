@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\TranslatableEloquent;
 use App\Models\Foundation\Traits\Presentable;
+use App\Models\Foundation\Traits\Translatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Fragment extends TranslatableEloquent
+class Fragment extends Model
 {
-    use Presentable;
+    use Presentable, Translatable;
 
     protected $guarded = ['id'];
     public $translatedAttributes = ['text'];
@@ -15,7 +16,7 @@ class Fragment extends TranslatableEloquent
     public function updateWithRelations(array $attributes)
     {
         foreach (config('app.locales') as $locale) {
-            $this->translate($locale)->text = $attributes[translate_field_name('text', $locale)];
+            $this->translatefoobar($locale)->text = $attributes[translate_field_name('text', $locale)];
         }
 
         return $this;

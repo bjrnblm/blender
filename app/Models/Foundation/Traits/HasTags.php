@@ -50,7 +50,7 @@ trait HasTags
 
         return $this->getTags($type)
             ->map(function ($tag) use ($locale) {
-                return $tag->translate($locale)->name;
+                return $tag->translatefoobar($locale)->name;
             })
             ->toArray();
     }
